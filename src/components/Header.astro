@@ -1,25 +1,35 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+
+import logo from "../../public/LF.png";
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+  <div class="flex items-center p-10">
+    <a href="/" class="logo flex items-center">
+      <img
+        src={logo}
+        alt="Fernando Callisaya @fwzk logo"
+        class="w-16 rounded mr-8"
+        width="64"
+        height="64"
+      />
+    </a>
+    <nav>
+      <HeaderLink class="hover:bg-green" href="/">🏠</HeaderLink>
+      <HeaderLink class="hover:bg-green" href="/about">Acerca</HeaderLink>
+      <HeaderLink class="hover:bg-green" href="/blog">Artículos</HeaderLink>
+      <HeaderLink class="hover:bg-green" href="/conferences">
+        Conferencias
+      </HeaderLink>
+    </nav>
+  </div>
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
+  header {
+    margin: 0em 0 2em;
+  }
+  h2 {
+    margin: 0.5em 0;
+  }
 </style>
